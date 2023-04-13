@@ -28,8 +28,6 @@ var L_PAR = 31
 var R_PAR = 32
 var L_BRACK = 33
 var R_BRACK = 34
-var L_BRACE = 35
-var R_BRACE = 36
 // grammar specs
 var COMMA = 40
 var SEMICOLON = 41
@@ -107,20 +105,32 @@ for(i = 0; i < fContents.length; i++){
                         i += 4
                     }
                     break
-            }
+            }      
             break
         case INT_LIT:
-            
             let intChecker = intCheck(fContents.slice(i,fContents.length))
             i += intChecker
             if(fContents[i] == DOT){
                 i++
                 intChecker = intCheck(fContents.slice(i,fContents.length))
                 i += intChecker
+                fOutput[outputTracker] = FLOAT_LIT
+            }else{
+                fOutput[outputTracker] = INT_LIT
             }
             break
-        
-            
+        case L_PAR:
+            fOutput[outputTracker] = L_PAR
+            break
+        case R_PAR:
+            fOutput[outputTracker] = R_PAR
+        case L_BRACK:
+            fOutput[outputTracker] = L_BRACK
+            break
+        case R_BRACK:
+            fOutput[outputTracker] = R_BRACK
+            break
+                    
     }
     outputTracker++
 }
