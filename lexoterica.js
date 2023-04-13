@@ -130,7 +130,15 @@ for(i = 0; i < fContents.length; i++){
         case R_BRACK:
             fOutput[outputTracker] = R_BRACK
             break
-                    
+        case COMMA:
+            fOutput[outputTracker] = COMMA
+            break
+        case SEMICOLON:
+            fOutput[outputTracker] = SEMICOLON
+            break
+        case DOT:
+            fOutput[outputTracker] = DOT
+        
     }
     outputTracker++
 }
