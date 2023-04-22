@@ -1,0 +1,17 @@
+strange:
+
+varOne ;
+varTwo ;
+varOne = 5 ;
+varTwo = 15 ;
+
+
+potentially (varOne < varTwo)
+    varOne = varOne - 1 ;
+otherwise
+    varTwo = varOne - 5 ;
+
+during ( varOne == varTwo ) 
+    varOne = 0 ;
+
+!unstrange
